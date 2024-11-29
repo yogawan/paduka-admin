@@ -83,7 +83,7 @@ const FormOrganisms = () => {
                     name="tempatLahir"
                     value={formData.tempatLahir}
                     onChange={handleChange}
-                    className="w-full p-[13px] border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                 />
                 </div>
