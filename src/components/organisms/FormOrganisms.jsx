@@ -1,39 +1,51 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-import NavigationMolecules from "../molecules/NavigationMolecules";
+import NavigationOrganisms from "../organisms/NavigationOrganisms";
 
 const FormOrganisms = () => {
   const [formData, setFormData] = useState({
-    nama: "",
-    nik: "",
-    gol_darah: "",
-    tempatLahir: "",
-    tanggalLahir: "",
-    jenisKelamin: "",
-    agama: "",
-    statusPerkawinan: "",
-    pekerjaan: "",
-    alamat: "",
-    kewarganegaraan: "",
+    Nik: '',
+    Nama_Lengkap: '',
+    Gol_Darah: '',
+    Tempat_Lahir: '',
+    Tanggal_Lahir: '',
+    Jenis_Kelamin: '',
+    Agama: '',
+    Status_Kawin: '',
+    Pekerjaan: '',
+    Alamat: '',
+    Kewarganegaraan: ''
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData({
+      ...formData,
       [name]: value,
-    }));
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    console.log("Berhasil dikirim.");
+    console.log(formData);
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/ktp', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log('Data berhasil dikirim:', response.data);
+      alert("Data Penduduk Berhasil di Tambahkan.")
+    } catch (error) {
+      console.error('Terjadi kesalahan:', error);
+    }
   };
+  
 
   return (
     <div>
-      <NavigationMolecules></NavigationMolecules>
+      <NavigationOrganisms></NavigationOrganisms>
       <div className="flex justify-center items-center flex-wrap-reverse pt-[128px]">
         <div className="w-[610px] p-6">
           <img className="w-[100%]" src="/ilustrator.png" alt="" />
@@ -43,19 +55,17 @@ const FormOrganisms = () => {
           <h1 className="text-center font-thin leading-none text-[44px] pt-4 pb-4 border border-b-1 border-[#FFFFFF]">
             Form Input <br />Data Penduduk
           </h1>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             {/* NIK */}
             <div className="space-y-2">
               <label className="block font-medium text-gray-700 ml-3" htmlFor="nik">
                 NIK
               </label>
               <input
-                id="nik"
                 type="text"
-                name="nik"
-                value={formData.nik}
+                name="Nik"
+                value={formData.Nik}
                 onChange={handleChange}
-                maxLength={16}
                 className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                 required
                 placeholder="Masukan nik anda"
@@ -68,10 +78,9 @@ const FormOrganisms = () => {
                 Nama Lengkap
               </label>
               <input
-                id="nama"
                 type="text"
-                name="nama"
-                value={formData.nama}
+                name="Nama_Lengkap"
+                value={formData.Nama_Lengkap}
                 onChange={handleChange}
                 className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                 required
@@ -85,9 +94,9 @@ const FormOrganisms = () => {
                   Gol. Darah
                 </label>
                 <select
-                  id="gol_darah"
-                  name="gol_darah"
-                  value={formData.gol_darah}
+                  type="text"
+                  name="Gol_Darah"
+                  value={formData.Gol_Darah}
                   onChange={handleChange}
                   className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
@@ -107,10 +116,9 @@ const FormOrganisms = () => {
                   Tempat Lahir
                 </label>
                 <input
-                  id="tempatLahir"
                   type="text"
-                  name="tempatLahir"
-                  value={formData.tempatLahir}
+                  name="Tempat_Lahir"
+                  value={formData.Tempat_Lahir}
                   onChange={handleChange}
                   className="w-full p-[13px] border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
@@ -124,10 +132,9 @@ const FormOrganisms = () => {
                   Tanggal Lahir
                 </label>
                 <input
-                  id="tanggalLahir"
                   type="date"
-                  name="tanggalLahir"
-                  value={formData.tanggalLahir}
+                  name="Tanggal_Lahir"
+                  value={formData.Tanggal_Lahir}
                   onChange={handleChange}
                   className="w-full p-3 border border-gray-300 rounded-r-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
@@ -142,16 +149,16 @@ const FormOrganisms = () => {
                   Jenis Kelamin
                 </label>
                 <select
-                  id="jenisKelamin"
-                  name="jenisKelamin"
-                  value={formData.jenisKelamin}
+                  type="text"
+                  name="Jenis_Kelamin"
+                  value={formData.Jenis_Kelamin}
                   onChange={handleChange}
                   className="w-full p-4 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
                 >
                   <option value="">Pilih</option>
-                  <option value="Laki-laki">Laki-laki</option>
-                  <option value="Perempuan">Perempuan</option>
+                  <option value="L">Laki-laki</option>
+                  <option value="P">Perempuan</option>
                 </select>
               </div>
 
@@ -161,9 +168,9 @@ const FormOrganisms = () => {
                   Agama
                 </label>
                 <select
-                  id="agama"
-                  name="agama"
-                  value={formData.agama}
+                  type="text"
+                  name="Agama"
+                  value={formData.Agama}
                   onChange={handleChange}
                   className="w-full p-4 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
@@ -184,9 +191,9 @@ const FormOrganisms = () => {
                   Status Kawin
                 </label>
                 <select
-                  id="statusPerkawinan"
-                  name="statusPerkawinan"
-                  value={formData.statusPerkawinan}
+                  type="text"
+                  name="Status_Kawin"
+                  value={formData.Status_Kawin}
                   onChange={handleChange}
                   className="w-full p-4 border border-gray-300 rounded-r-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
@@ -206,10 +213,9 @@ const FormOrganisms = () => {
                 Pekerjaan
               </label>
               <input
-                id="pekerjaan"
                 type="text"
-                name="pekerjaan"
-                value={formData.pekerjaan}
+                name="Pekerjaan"
+                value={formData.Pekerjaan}
                 onChange={handleChange}
                 className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                 required
@@ -223,9 +229,9 @@ const FormOrganisms = () => {
                 Alamat
               </label>
               <textarea
-                id="alamat"
-                name="alamat"
-                value={formData.alamat}
+                type="text"
+                name="Alamat"
+                value={formData.Alamat}
                 onChange={handleChange}
                 className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                 rows={3}
@@ -239,16 +245,16 @@ const FormOrganisms = () => {
                   Kewarganegaraan
                 </label>
                 <select
-                  id="kewarganegaraan"
-                  name="kewarganegaraan"
-                  value={formData.kewarganegaraan}
+                  type="text"
+                  name="Kewarganegaraan"
+                  value={formData.Kewarganegaraan}
                   onChange={handleChange}
                   className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
                 >
                   <option value="">Pilih</option>
-                  <option value="Indonesia">WNI</option>
-                  <option value="Asing">WNA</option>
+                  <option value="WNI">WNI</option>
+                  <option value="WNA">WNA</option>
                 </select>
             </div>
 

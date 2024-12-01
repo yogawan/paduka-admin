@@ -4,14 +4,15 @@ import './index.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import AboutPages from './components/pages/AboutPages';
-import FormPages from './components/pages/FormPages';
 import HomePages from './components/pages/HomePages';
+import FormPages from './components/pages/FormPages';
+import AppPages from './components/pages/AppPages';
+
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <AboutPages></AboutPages>
+    element: <HomePages></HomePages>
   },
   {
     path: '/form',
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/app',
-    element: <HomePages></HomePages>
+    element: <AppPages></AppPages>
   }
 ])
 

@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NavigationMolecules from "../molecules/NavigationMolecules";
-
-const AboutPages = () => {
-  return (
-    <div>
-      <NavigationMolecules></NavigationMolecules>
-      <div className="h-screen flex items-center justify-center p-4 bg-whiite">
+const TeamOrganisms = () => {
+    return (
+        <div className="h-screen flex items-center justify-center p-4 bg-whiite">
         <div className="w-[610px] text-start">
           {/* Nama dan NIM */}
           <h1 className="text-3xl font-thin mb-1 text-[#171717]">Yogawan Aditya Pratama</h1>
@@ -42,8 +38,7 @@ const AboutPages = () => {
           <Link className="ml-6" to={"/app"}>See Demo App</Link>
         </div>
       </div>
-    </div>
-  );
-};
+    )
+}
 
-export default AboutPages;
+export default TeamOrganisms;
