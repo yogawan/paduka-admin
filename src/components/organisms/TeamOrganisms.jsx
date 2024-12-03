@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const TeamOrganisms = () => {
     return (
-        <div className="h-screen flex items-center justify-center p-4 bg-whiite">
+      <div className="ml-[256px] pl-[100px] pt-[128px] bg-bg-image-gradient bg-cover bg-center h-screen">
         <div className="w-[610px] text-start">
           {/* Nama dan NIM */}
           <h1 className="text-3xl font-thin mb-1 text-[#171717]">Yogawan Aditya Pratama</h1>
@@ -31,11 +31,11 @@ const TeamOrganisms = () => {
               className="relative inline-flex items-center justify-center px-12 py-6 text-lg font-bold text-white bg-[#171717] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-all duration-200"
               role="button"
             >
-              See Demo Form
+              Get Started
             </Link>
           </div>
 
-          <Link className="ml-6" to={"/app"}>See Demo App</Link>
+          <Link className="ml-6" to={"/app"}>Our GitHub</Link>
         </div>
       </div>
     )

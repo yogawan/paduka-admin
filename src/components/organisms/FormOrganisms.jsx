@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import NavigationOrganisms from "../organisms/NavigationOrganisms";
+import { Link } from "react-router-dom";
+import TabOrganisms from "./TabOrganisms";
 
 const FormOrganisms = () => {
   const [formData, setFormData] = useState({
@@ -47,21 +49,20 @@ const FormOrganisms = () => {
   };
 
   return (
-    <div className="bg-[#EEEEEE]">
+    <div className="bg-bg-image-gradient bg-cover bg-center h-screen">
       <NavigationOrganisms></NavigationOrganisms>
-      <h1 className="mb-[32px] ml-[280px] text-center font-thin leading-none text-[44px] pt-[24px] pb-4">
-            Form Input
-            Data Penduduk
-      </h1>
       <div className="flex justify-end items-center flex-wrap">
-        <div className="ml-[280px] w-[1440px] p-3 bg-[#FFFFFF] rounded-[44px]">
+        <div className="ml-[280px] w-[1440px] h-full p-3 rounded-[24px]">
 
-          <form className="flex justify-between space-y-6" onSubmit={handleSubmit}>
+          {/* Form */}
+          <form className="flex justify-between items-start space-y-6" onSubmit={handleSubmit}>
+            
+            {/* Left */}
             <div className="w-[50%] p-4">
               {/* NIK */}
               <div className="space-y-2">
                 <label
-                  className="block font-medium text-gray-700 ml-3"
+                  className="mt-[12px] block font-medium text-gray-700 ml-3"
                   htmlFor="nik"
                 >
                   NIK
@@ -71,7 +72,7 @@ const FormOrganisms = () => {
                   name="Nik"
                   value={formData.Nik}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                  className="w-full p-3 bg-transparent border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
                   placeholder="Masukan nik anda"
                 />
@@ -80,7 +81,7 @@ const FormOrganisms = () => {
               {/* Nama Lengkap */}
               <div className="space-y-2">
                 <label
-                  className="block font-medium text-gray-700 ml-3"
+                  className="mt-[12px] block font-medium text-gray-700 ml-3"
                   htmlFor="nama"
                 >
                   Nama Lengkap
@@ -90,7 +91,7 @@ const FormOrganisms = () => {
                   name="Nama_Lengkap"
                   value={formData.Nama_Lengkap}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                  className="w-full bg-[#FFFFFF50] p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
                   placeholder="Masukan nama lengkap anda"
                 />
@@ -99,7 +100,7 @@ const FormOrganisms = () => {
               {/* Gol. Darah */}
               <div className="space-y-2">
                 <label
-                  className="block font-medium text-gray-700 ml-3"
+                  className="mt-[12px] block font-medium text-gray-700 ml-3"
                   htmlFor="gol_darah"
                 >
                   Gol. Darah
@@ -109,7 +110,7 @@ const FormOrganisms = () => {
                   name="Gol_Darah"
                   value={formData.Gol_Darah}
                   onChange={handleChange}
-                  className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                  className="w-full bg-[#FFFFFF50] p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
                 >
                   <option value="">Pilih</option>
@@ -124,7 +125,7 @@ const FormOrganisms = () => {
                 {/* Tempat Lahir */}
                 <div className="space-y-2 w-[40%]">
                   <label
-                    className="block font-medium text-gray-700 ml-3"
+                    className="mt-[12px] block font-medium text-gray-700 ml-3"
                     htmlFor="tempatLahir"
                   >
                     Tempat Lahir
@@ -134,7 +135,7 @@ const FormOrganisms = () => {
                     name="Tempat_Lahir"
                     value={formData.Tempat_Lahir}
                     onChange={handleChange}
-                    className="w-full p-[13px] border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                    className="w-full bg-[#FFFFFF50] p-[13px] border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                     required
                     placeholder="Masukan kota/kabupaten"
                   />
@@ -143,7 +144,7 @@ const FormOrganisms = () => {
                 {/* Tanggal Lahir */}
                 <div className="space-y-2 w-[60%]">
                   <label
-                    className="block font-medium text-gray-700 ml-3"
+                    className="mt-[12px] block font-medium text-gray-700 ml-3"
                     htmlFor="tanggalLahir"
                   >
                     Tanggal Lahir
@@ -153,7 +154,7 @@ const FormOrganisms = () => {
                     name="Tanggal_Lahir"
                     value={formData.Tanggal_Lahir}
                     onChange={handleChange}
-                    className="w-full p-3 border border-gray-300 rounded-r-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                    className="w-full bg-[#FFFFFF50] p-3 border border-gray-300 rounded-r-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                     required
                   />
                 </div>
@@ -162,7 +163,7 @@ const FormOrganisms = () => {
               {/* Jenis Kelamin */}
               <div className="space-y-2">
                 <label
-                  className="block font-medium text-gray-700 ml-3"
+                  className="mt-[12px] block font-medium text-gray-700 ml-3"
                   htmlFor="jenisKelamin"
                 >
                   Jenis Kelamin
@@ -172,7 +173,7 @@ const FormOrganisms = () => {
                   name="Jenis_Kelamin"
                   value={formData.Jenis_Kelamin}
                   onChange={handleChange}
-                  className="w-[100%] p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                  className="w-[100%] bg-[#FFFFFF50] p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
                 >
                   <option value="">Pilih</option>
@@ -181,13 +182,10 @@ const FormOrganisms = () => {
                 </select>
               </div>
 
-
-
-
-{/* Agama */}
-<div className="space-y-2">
+              {/* Agama */}
+              <div className="space-y-2">
                 <label
-                  className="block font-medium text-gray-700 ml-3"
+                  className="mt-[12px] block font-medium text-gray-700 ml-3"
                   htmlFor="agama"
                 >
                   Agama
@@ -197,7 +195,7 @@ const FormOrganisms = () => {
                   name="Agama"
                   value={formData.Agama}
                   onChange={handleChange}
-                  className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                  className="w-full bg-[#FFFFFF50] p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
                 >
                   <option value="">Pilih</option>
@@ -212,7 +210,7 @@ const FormOrganisms = () => {
             {/* Status Perkawinan */}
             <div className="space-y-2">
               <label
-                className="block font-medium text-gray-700 ml-3"
+                className="mt-[12px] block font-medium text-gray-700 ml-3"
                 htmlFor="statusPerkawinan"
               >
                 Status Kawin
@@ -222,7 +220,7 @@ const FormOrganisms = () => {
                 name="Status_Kawin"
                 value={formData.Status_Kawin}
                 onChange={handleChange}
-                className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                className="w-full bg-[#FFFFFF50] p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                 required
               >
                 <option value="">Pilih</option>
@@ -235,149 +233,158 @@ const FormOrganisms = () => {
 
 
             </div>
+
+            {/* Right */}
             <div className="w-[50%] p-4">
-              
-            {/* Pekerjaan */}
-            <div className="space-y-1">
-              <label
-                className="block font-medium text-gray-700 ml-3"
-                htmlFor="pekerjaan"
-              >
-                Pekerjaan
-              </label>
-              <select
-                name="Pekerjaan"
-                value={formData.Pekerjaan}
-                onChange={handleChange}
-                className="w-full p-4 border border-[#17171725] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
-                required
-              >
-                <option value="">Pilih Pekerjaan</option>
-                <option value="Belum / Tidak Bekerja">Belum / Tidak Bekerja</option>
-                <option value="Mengurus Rumah Tangga">Mengurus Rumah Tangga</option>
-                <option value="Pelajar / Mahasiswa">Pelajar / Mahasiswa</option>
-                <option value="Pensiunan">Pensiunan</option>
-                <option value="Pegawai Negeri Sipil">Pegawai Negeri Sipil</option>
-                <option value="Tentara Nasional Indonesia">Tentara Nasional Indonesia</option>
-                <option value="Kepolisian RI">Kepolisian RI</option>
-                <option value="Perdagangan">Perdagangan</option>
-              </select>
-            </div>
-
-            {/* Alamat */}
-            <div className="space-y-1">
-              <label
-                className="block font-medium text-gray-700 ml-3"
-                htmlFor="pekerjaan"
-              >
-                Alamat
-              </label>
-            </div>
-            <div className="bg-[#FFFFFF] rounded-[32px] mt-2 p-2 border border-[#17171725]">
-              
-              <div className="space-y-2">
-
+              {/* Pekerjaan */}
+              <div className="space-y-1">
+                <label
+                  className="block font-medium text-gray-700 ml-3"
+                  htmlFor="pekerjaan"
+                >
+                  Pekerjaan
+                </label>
                 <select
-                  type="text"
-                  name="Provinsi"
-                  value={formData.Provinsi}
+                  name="Pekerjaan"
+                  value={formData.Pekerjaan}
                   onChange={handleChange}
-                  className="w-full p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                  className="w-full bg-[#FFFFFF50] p-4 border border-[#17171725] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                   required
                 >
-                  <option value="">Provinsi</option>
-                  <option value="DIY">Daerah Istimewa Yogyakarta</option>
+                  <option value="">Pilih Pekerjaan</option>
+                  <option value="Belum / Tidak Bekerja">Belum / Tidak Bekerja</option>
+                  <option value="Mengurus Rumah Tangga">Mengurus Rumah Tangga</option>
+                  <option value="Pelajar / Mahasiswa">Pelajar / Mahasiswa</option>
+                  <option value="Pensiunan">Pensiunan</option>
+                  <option value="Pegawai Negeri Sipil">Pegawai Negeri Sipil</option>
+                  <option value="Tentara Nasional Indonesia">Tentara Nasional Indonesia</option>
+                  <option value="Kepolisian RI">Kepolisian RI</option>
+                  <option value="Perdagangan">Perdagangan</option>
                 </select>
-
-                <select
-                  type="text"
-                  name="Kabupaten"
-                  value={formData.Kabupaten}
-                  onChange={handleChange}
-                  className="w-full p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
-                  required
-                >
-                  <option value="">Kabupaten/Kota</option>
-                  <option value="Sleman">Sleman</option>
-                  <option value="Yogyakarta">Yogyakarta</option>
-                  <option value="Gunung Kidul">Gunung Kidul</option>
-                  <option value="Bantul">Bantul</option>
-                  <option value="Kulon Progo">Kulon Progo</option>
-                </select>
-
-                <select
-                  type="text"
-                  name="Kecamatan"
-                  value={formData.Kecamatan}
-                  onChange={handleChange}
-                  className="w-full p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
-                  required
-                >
-                  <option value="">Kecamatan</option>
-                  <option value="Samigaluh">Samigaluh</option>
-                  <option value="Kalibawang">Kalibawang</option>
-                  <option value="Girimulyo">Girimulyo</option>
-                  <option value="Nangulan">Nanggulan</option>
-                </select>
-
-                <select
-                  type="text"
-                  name="Kelurahan"
-                  value={formData.Kelurahan}
-                  onChange={handleChange}
-                  className="w-full p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
-                  required
-                >
-                  <option value="">Kelurahan/Desa</option>
-                  <option value="Kembang">Kembang</option>
-                  <option value="Jatisarono">Jatisarono</option>
-                  <option value="Wijimulyo">Wijimulyo</option>
-                  <option value="Tanjung">Tanjungharjo</option>
-                </select>
-            
-                <textarea
-                  type="text"
-                  name="Dusun"
-                  placeholder="Masukan Alamat"
-                  value={formData.Dusun}
-                  onChange={handleChange}
-                  className="w-full p-3 border border-[#17171725] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
-                  rows={3}
-                  required
-              ></textarea>
               </div>
-            </div>
 
-            {/* Kewarganegaraan */}
-            <div className="space-y-2">
-              <label
-                className="block font-medium text-gray-700 ml-3"
-                htmlFor="kewarganegaraan"
-              >
-                Kewarganegaraan
-              </label>
-              <select
-                type="text"
-                name="Kewarganegaraan"
-                value={formData.Kewarganegaraan}
-                onChange={handleChange}
-                className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
-                required
-              >
-                <option value="">Pilih</option>
-                <option value="WNI">WNI</option>
-                <option value="WNA">WNA</option>
-              </select>
-            </div>
-            {/* Button */}
-            <div className="flex justify-end mt-[16px] pt-[8px] border-t border-[#17171725]">
-              <button
-                type="submit"
-                className="w-[25%] py-5 px-8 text-white bg-[#171717] rounded-full hover:bg-gray-700"
-              >
-                Simpan
-              </button>
-            </div>
+              {/* Alamat */}
+              <div className="space-y-1">
+                <label
+                  className="mt-[12px] block font-medium text-gray-700 ml-3"
+                  htmlFor="pekerjaan"
+                >
+                  Alamat
+                </label>
+              </div>
+              <div className="bg-[#FFFFFF50]  rounded-[32px] mt-2 p-2 border border-[#17171725]">
+                <div className="space-y-2">
+                  <select
+                    type="text"
+                    name="Provinsi"
+                    value={formData.Provinsi}
+                    onChange={handleChange}
+                    className="w-full p-4 bg-[#FFFFFF50] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                    required
+                  >
+                    <option value="">Provinsi</option>
+                    <option value="DIY">Daerah Istimewa Yogyakarta</option>
+                  </select>
+
+                  <select
+                    type="text"
+                    name="Kabupaten"
+                    value={formData.Kabupaten}
+                    onChange={handleChange}
+                    className="w-full p-4 bg-[#FFFFFF50] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                    required
+                  >
+                    <option value="">Kabupaten/Kota</option>
+                    <option value="Sleman">Sleman</option>
+                    <option value="Yogyakarta">Yogyakarta</option>
+                    <option value="Gunung Kidul">Gunung Kidul</option>
+                    <option value="Bantul">Bantul</option>
+                    <option value="Kulon Progo">Kulon Progo</option>
+                  </select>
+
+                  <select
+                    type="text"
+                    name="Kecamatan"
+                    value={formData.Kecamatan}
+                    onChange={handleChange}
+                    className="w-full p-4 bg-[#FFFFFF50] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                    required
+                  >
+                    <option value="">Kecamatan</option>
+                    <option value="Samigaluh">Samigaluh</option>
+                    <option value="Kalibawang">Kalibawang</option>
+                    <option value="Girimulyo">Girimulyo</option>
+                    <option value="Nangulan">Nanggulan</option>
+                  </select>
+
+                  <select
+                    type="text"
+                    name="Kelurahan"
+                    value={formData.Kelurahan}
+                    onChange={handleChange}
+                    className="w-full p-4 bg-[#FFFFFF50] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                    required
+                  >
+                    <option value="">Kelurahan/Desa</option>
+                    <option value="Kembang">Kembang</option>
+                    <option value="Jatisarono">Jatisarono</option>
+                    <option value="Wijimulyo">Wijimulyo</option>
+                    <option value="Tanjung">Tanjungharjo</option>
+                  </select>
+              
+                  <textarea
+                    type="text"
+                    name="Dusun"
+                    placeholder="Masukan Alamat"
+                    value={formData.Dusun}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-[#FFFFFF50] border border-[#17171725] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                    rows={3}
+                    required
+                ></textarea>
+                </div>
+              </div>
+
+              {/* Kewarganegaraan */}
+              <div className="space-y-2">
+                <label
+                  className="mt-[12px] block font-medium text-gray-700 ml-3"
+                  htmlFor="kewarganegaraan"
+                >
+                  Kewarganegaraan
+                </label>
+                <select
+                  type="text"
+                  name="Kewarganegaraan"
+                  value={formData.Kewarganegaraan}
+                  onChange={handleChange}
+                  className="w-full p-4 bg-[#FFFFFF50] border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
+                  required
+                >
+                  <option value="">Pilih</option>
+                  <option value="WNI">WNI</option>
+                  <option value="WNA">WNA</option>
+                </select>
+              </div>
+
+              <div className="flex justify-end">
+                {/* Tombol dengan Efek Gradient dan Blur */}
+                <div className="relative inline-flex group mt-8">
+                  {/* Background Gradient dan Blur Effect */}
+                  <div
+                    className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"
+                  ></div>
+
+                  {/* Tombol dengan Efek Hover dan Fokus */}
+                  <Link
+                    to="/form"
+                    className="relative inline-flex items-center justify-center px-12 py-6 text-lg font-bold text-white bg-[#171717] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-all duration-200"
+                    role="button"
+                  >
+                    Simpan Data
+                  </Link>
+                </div>
+              </div>
 
             </div>
           </form>
