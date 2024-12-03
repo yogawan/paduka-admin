@@ -9,11 +9,11 @@ const TeamOrganisms = () => {
           <h1 className="text-3xl font-thin mb-1 text-[#171717]">Yogawan Aditya Pratama</h1>
           <h2 className="text-lg text-[#17171775] font-thin mb-3">5220411056</h2>
           
-          <h1 className="text-3xl font-thin mb-1 text-[#171717]">Miko Dian Rachmadany</h1>
+          <h1 className="text-3xl font-thin mb-1 text-[#171717]">Miko Dian Rachmandany</h1>
           <h2 className="text-lg text-[#17171775] font-thin mb-3">5220411060</h2>
           
           <h1 className="text-3xl font-thin mb-1 text-[#171717]">Sandy Maulana Rifqi</h1>
-          <h2 className="text-lg text-[#17171775] font-thin mb-3">52204110XX</h2>
+          <h2 className="text-lg text-[#17171775] font-thin mb-3">5220411069</h2>
           
           <h1 className="text-3xl font-thin mb-1 text-[#171717]">Trio Saputro</h1>
           <h2 className="text-lg text-[#17171775] font-thin mb-12">5220411097</h2>
