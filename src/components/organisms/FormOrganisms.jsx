@@ -44,7 +44,6 @@ const FormOrganisms = () => {
         }
       );
       console.log("Data berhasil dikirim:", response.data);
-      alert("Data Penduduk Berhasil di Tambahkan.");
       setFormData({
         Nik: "",
         Nama_Lengkap: "",
@@ -62,6 +61,7 @@ const FormOrganisms = () => {
         Dusun: "",
         Kewarganegaraan: "",
       });
+      alert("Data Penduduk Berhasil di Tambahkan.");
     } catch (error) {
       console.error("Terjadi kesalahan:", error);
     }
