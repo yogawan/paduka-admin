@@ -35,7 +35,7 @@ const CardOrganisms = () => {
   };
 
   return (
-    <div className="ml-[256px] pl-[44px] pt-[16px] bg-bg-image-gradient bg-cover bg-center h-[2440px]">
+    <div className="ml-[256px] pl-[44px] pt-[16px] h-fit">
       
       {/* Title */}
       <h1 className="text-center font-thin leading-none text-[44px] pt-4 pb-4 border border-b-1 border-[#FFFFFF]">
