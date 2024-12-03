@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import NavigationOrganisms from "../organisms/NavigationOrganisms";
-import { Link } from "react-router-dom";
-import TabOrganisms from "./TabOrganisms";
 
 const FormOrganisms = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +12,13 @@ const FormOrganisms = () => {
     Jenis_Kelamin: "",
     Agama: "",
     Status_Kawin: "",
+
     Pekerjaan: "",
-    Alamat: "",
+    Provinsi: "",
+    Kabupaten: "",
+    Kecamatan: "",
+    Kelurahan: "",
+    Dusun: "",
     Kewarganegaraan: "",
   });
 
@@ -43,11 +45,28 @@ const FormOrganisms = () => {
       );
       console.log("Data berhasil dikirim:", response.data);
       alert("Data Penduduk Berhasil di Tambahkan.");
+      setFormData({
+        Nik: "",
+        Nama_Lengkap: "",
+        Gol_Darah: "",
+        Tempat_Lahir: "",
+        Tanggal_Lahir: "",
+        Jenis_Kelamin: "",
+        Agama: "",
+        Status_Kawin: "",
+        Pekerjaan: "",
+        Provinsi: "",
+        Kabupaten: "",
+        Kecamatan: "",
+        Kelurahan: "",
+        Dusun: "",
+        Kewarganegaraan: "",
+      });
     } catch (error) {
       console.error("Terjadi kesalahan:", error);
     }
   };
-
+  
   return (
     <div className="bg-bg-image-gradient bg-cover bg-center h-screen">
       <NavigationOrganisms></NavigationOrganisms>
@@ -367,6 +386,7 @@ const FormOrganisms = () => {
                 </select>
               </div>
 
+              {/* Button */}
               <div className="flex justify-end">
                 {/* Tombol dengan Efek Gradient dan Blur */}
                 <div className="relative inline-flex group mt-8">
@@ -376,13 +396,13 @@ const FormOrganisms = () => {
                   ></div>
 
                   {/* Tombol dengan Efek Hover dan Fokus */}
-                  <Link
-                    to="/form"
+                  <button 
+                    type="submit"
                     className="relative inline-flex items-center justify-center px-12 py-6 text-lg font-bold text-white bg-[#171717] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-all duration-200"
-                    role="button"
                   >
                     Simpan Data
-                  </Link>
+                  </button>
+                  
                 </div>
               </div>
 
