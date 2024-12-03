@@ -51,7 +51,7 @@ const CardOrganisms = () => {
           value={searchQuery}
           onChange={handleSearch}
         />
-        <button onClick={() => handleSearch({ target: { value: searchQuery } })} className="px-10 py-3 rounded-full text-white bg-[#171717]">Search</button>
+        <button onClick={() => handleSearch({ target: { value: searchQuery } })} className="px-10 py-3 rounded-full text-white bg-[#171717]">Cari</button>
       </div>
 
       {/* Card */}
