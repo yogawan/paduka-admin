@@ -54,7 +54,7 @@ const CardOrganisms = () => {
         <button onClick={() => handleSearch({ target: { value: searchQuery } })} className="px-10 py-3 rounded-full text-white bg-[#171717]">Cari</button>
       </div>
 
-      {/* Card */}
+      {/* Card (Rendering List) */}
       <div className="pl-[16px] flex flex-wrap justify-between mt-10">
         {filteredData.length > 0 ? (
           filteredData.map((data, index) => (

@@ -9,6 +9,9 @@ export default {
       backgroundImage: {
         'bg-image-gradient': "url('/bg.png')",
       },
+      screens: {
+        'mobile': { 'max': '400px' },
+      },
     },
   },
   plugins: [],
