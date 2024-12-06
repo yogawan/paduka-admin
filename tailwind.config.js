@@ -10,7 +10,7 @@ export default {
         'bg-image-gradient': "url('/bg.png')",
       },
       screens: {
-        'mobile': { 'max': '400px' },
+        'mobile': { 'max': '450px' },
       },
     },
   },
