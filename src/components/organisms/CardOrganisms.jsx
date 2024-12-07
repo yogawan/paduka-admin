@@ -35,23 +35,23 @@ const CardOrganisms = () => {
   };
 
   return (
-    <div className="ml-[256px] pl-[44px] pt-[16px] h-fit">
+    <div className="ml-[256px] mobile:ml-[96px] pl-[44px] pt-[16px] h-fit">
       
       {/* Title */}
-      <h1 className="text-center font-thin leading-none text-[44px] pt-4 pb-4 border border-b-1 border-[#FFFFFF]">
+      <h1 className="text-center font-thin leading-none text-[44px] mobile:text-[24px] mobile:text-left pt-4 pb-4 border border-b-1 border-[#FFFFFF]">
         Semua Data Penduduk
       </h1>
 
       {/* Search */}
       <div className="flex justify-center pt-1">
         <input
-          className="px-20 py-3 rounded-full bg-[#FFFFFF50] border border-[#17171725]"
+          className="px-20 mobile:px-4 py-3 rounded-full bg-[#FFFFFF50] border border-[#17171725]"
           type="search"
           placeholder="Cari data penduduk"
           value={searchQuery}
           onChange={handleSearch}
         />
-        <button onClick={() => handleSearch({ target: { value: searchQuery } })} className="px-10 py-3 rounded-full text-white bg-[#171717]">Cari</button>
+        <button onClick={() => handleSearch({ target: { value: searchQuery } })} className="px-10 mobile:px-4 py-3 rounded-full text-white bg-[#171717]">Cari</button>
       </div>
 
       {/* Card (Rendering List) */}
@@ -59,7 +59,7 @@ const CardOrganisms = () => {
         {filteredData.length > 0 ? (
           filteredData.map((data, index) => (
             <div className="p-2 border border-[#17171725] rounded-[24px] mb-[32px]" key={index}>
-              <table className="w-[540px] border-collapse">
+              <table className="w-[540px] mobile:w-[300px] border-collapse">
                 <thead>
                   <tr>
                     <th className="border-b px-4 py-2 text-left">Field</th>

@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePages from './components/pages/HomePages';
 import FormPages from './components/pages/FormPages';
 import AppPages from './components/pages/AppPages';
+import AIPages from './components/pages/AIPages';
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: '/app',
     element: <AppPages></AppPages>
+  },
+  {
+    path: '/chat',
+    element: <AIPages></AIPages>
   },
 ])
 

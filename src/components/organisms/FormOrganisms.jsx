@@ -68,17 +68,17 @@ const FormOrganisms = () => {
   };
 
   return (
-    <div className="bg-bg-image-gradient bg-cover bg-center h-[800px]">
+    <div className="bg-bg-image-gradient bg-cover bg-center h-[940px] mobile:h-full">
       <NavigationOrganisms></NavigationOrganisms>
       <div className="flex justify-end items-center flex-wrap">
-        <div className="ml-[280px] w-[1440px] h-full p-3 rounded-[24px]">
+        <div className="ml-[280px] mobile:ml-[128px] w-[1440px] h-full p-3 rounded-[24px]">
           {/* Form */}
           <form
-            className="flex justify-between items-start space-y-6"
+            className="flex justify-between items-start space-y-6 mobile:flex-wrap"
             onSubmit={handleSubmit}
           >
             {/* Left */}
-            <div className="w-[50%] p-4">
+            <div className="w-[50%] p-4 mobile:w-[300px]">
               {/* NIK */}
               <div className="space-y-2">
                 <div className="flex items-center mt-3 ml-3 text-[#17171795]">
@@ -358,7 +358,7 @@ const FormOrganisms = () => {
             </div>
 
             {/* Right */}
-            <div className="w-[50%] p-4">
+            <div className="w-[50%] p-4 mobile:w-[300px]">
               {/* Pekerjaan */}
               <div className="space-y-2">
                 <div className="flex items-center mt-3 ml-3 text-[#17171795]">
