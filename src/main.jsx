@@ -9,7 +9,6 @@ import FormPages from './components/pages/FormPages';
 import AppPages from './components/pages/AppPages';
 import AIPages from './components/pages/AIPages';
 
-
 const router = createBrowserRouter([
   {
     path: '/',
