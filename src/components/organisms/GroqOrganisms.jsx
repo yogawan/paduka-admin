@@ -7,13 +7,14 @@ const GroqOrganisms = () => {
   const [loading, setLoading] = useState(false);
 
   const customAnswers = {
-    'siapa orang paling tua': 'Jawaban khusus: Orang tertua yang tercatat dalam sejarah adalah Jeanne Calment dari Prancis, yang hidup hingga usia 122 tahun dan 164 hari.',
-    'berapa umur bumi': 'Jawaban khusus: Umur Bumi diperkirakan sekitar 4,54 miliar tahun berdasarkan penelitian geologi.',
-    'apa arti kehidupan': 'Jawaban khusus: Arti kehidupan adalah 42! Ini adalah referensi dari "The Hitchhiker\'s Guide to the Galaxy."',
-    'siapa presiden pertama indonesia': 'Jawaban khusus: Presiden pertama Indonesia adalah Ir. Soekarno, yang memimpin dari tahun 1945 hingga 1967.',
-    'apa ibukota indonesia': 'Jawaban khusus: Ibukota Indonesia adalah Jakarta.',
-    'berapa kecepatan cahaya': 'Jawaban khusus: Kecepatan cahaya di ruang hampa adalah 299.792.458 meter per detik.',
-    'penduduk paling tua': "Miko Dian Rachmadany adalah Penduduk Tertua, tangal lahir 1992-01-12"
+    'siapa yang paling tua': 'Orang tertua dari data ini adalah I Gede Surya, lahir pada 22 Maret 1987 di Gianyar, dengan pekerjaan sebagai Seniman.',
+    'siapa yang paling muda': 'Orang termuda dari data ini adalah Ahmad Fauzan, lahir pada 10 Mei 2002 di Yogyakarta, dengan pekerjaan sebagai Mahasiswa.',
+    'berapa jumlah penduduk yang belum kawin': 'Dari data ini, terdapat 3 orang yang statusnya belum kawin.',
+    'siapa yang bekerja sebagai dokter': 'Dari data ini, Cindy Nathalia bekerja sebagai Dokter. Dia lahir pada 10 September 1991 di Medan.',
+    'siapa yang berasal dari Bali': 'Orang yang berasal dari Bali adalah I Gede Surya, lahir di Gianyar dan bekerja sebagai Seniman.',
+    'berapa jumlah penduduk dengan golongan darah O': 'Dari data ini, terdapat 2 orang dengan golongan darah O.',
+    'siapa yang bekerja sebagai mahasiswa': 'Ahmad Fauzan adalah Mahasiswa, lahir pada 10 Mei 2002 di Yogyakarta.',
+    'siapa yang statusnya kawin': 'Dari data ini, terdapat 2 orang yang statusnya kawin, yaitu I Gede Surya dan Maria Angelica.'
   };
 
   const AskAI = async () => {
@@ -53,7 +54,7 @@ const GroqOrganisms = () => {
             name="content"
             id="content"
             placeholder="Ayoo tanya sesuatu...."
-            className="w-full px-10 py-10 border rounded-[16px] focus:outline-[#171717]"
+            className="w-full bg-transparent px-10 py-10 border rounded-[16px] focus:outline-[#171717]"
           />
 
           {/* Button */}

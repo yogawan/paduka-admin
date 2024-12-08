@@ -55,11 +55,11 @@ const CardOrganisms = () => {
       </div>
 
       {/* Card (Rendering List) */}
-      <div className="pl-[16px] flex flex-wrap justify-between mt-10">
+      <div className="pl-[16px] flex flex-wrap justify-center mt-10">
         {filteredData.length > 0 ? (
           filteredData.map((data, index) => (
-            <div className="p-2 border border-[#17171725] rounded-[24px] mb-[32px]" key={index}>
-              <table className="w-[540px] mobile:w-[300px] border-collapse">
+            <div className="p-2 border border-[#17171725] rounded-[24px] m-[8px] mobile:border-none" key={index}>
+              <table className="w-[500px] mobile:w-[280px] border-collapse">
                 <thead>
                   <tr>
                     <th className="border-b px-4 py-2 text-left">Field</th>

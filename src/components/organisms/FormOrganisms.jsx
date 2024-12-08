@@ -319,6 +319,7 @@ const FormOrganisms = () => {
                   <option value="Konghucu">Konghucu</option>
                 </select>
               </div>
+              
               {/* Status Perkawinan */}
               <div className="space-y-2">
                 <div className="flex items-center mt-3 ml-3 text-[#17171795]">
@@ -433,6 +434,8 @@ const FormOrganisms = () => {
               </div>
               <div className="bg-[#FFFFFF50]  rounded-[32px] mt-2 p-2 border border-[#17171725]">
                 <div className="space-y-2">
+
+                  {/* Provinsi */}
                   <select
                     type="text"
                     name="Provinsi"
@@ -441,10 +444,49 @@ const FormOrganisms = () => {
                     className="w-full p-4 bg-[#FFFFFF50] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                     required
                   >
-                    <option value="">Provinsi</option>
-                    <option value="DIY">Daerah Istimewa Yogyakarta</option>
+                    <option value="">Pilih Provinsi</option>
+                    <option value="DI Yogyakarta">Daerah Istimewa Yogyakarta</option>
+                    <option value="Aceh">Aceh</option>
+                    <option value="Sumatera Utara">Sumatera Utara</option>
+                    <option value="Sumatera Barat">Sumatera Barat</option>
+                    <option value="Riau">Riau</option>
+                    <option value="Kepulauan Riau">Kepulauan Riau</option>
+                    <option value="Jambi">Jambi</option>
+                    <option value="Sumatera Selatan">Sumatera Selatan</option>
+                    <option value="Bangka Belitung">Kepulauan Bangka Belitung</option>
+                    <option value="Bengkulu">Bengkulu</option>
+                    <option value="Lampung">Lampung</option>
+                    <option value="DKI Jakarta">DKI Jakarta</option>
+                    <option value="Jawa Barat">Jawa Barat</option>
+                    <option value="Jawa Tengah">Jawa Tengah</option>
+                    <option value="Jawa Timur">Jawa Timur</option>
+                    <option value="Banten">Banten</option>
+                    <option value="Bali">Bali</option>
+                    <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                    <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                    <option value="Kalimantan Barat">Kalimantan Barat</option>
+                    <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                    <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                    <option value="Kalimantan Timur">Kalimantan Timur</option>
+                    <option value="Kalimantan Utara">Kalimantan Utara</option>
+                    <option value="Sulawesi Utara">Sulawesi Utara</option>
+                    <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                    <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                    <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                    <option value="Gorontalo">Gorontalo</option>
+                    <option value="Sulawesi Barat">Sulawesi Barat</option>
+                    <option value="Maluku">Maluku</option>
+                    <option value="Maluku Utara">Maluku Utara</option>
+                    <option value="Papua">Papua</option>
+                    <option value="Papua Barat">Papua Barat</option>
+                    <option value="Papua Tengah">Papua Tengah</option>
+                    <option value="Papua Pegunungan">Papua Pegunungan</option>
+                    <option value="Papua Selatan">Papua Selatan</option>
+                    <option value="Papua Barat Daya">Papua Barat Daya</option>
                   </select>
 
+
+                  {/* Kabupaten */}
                   <select
                     type="text"
                     name="Kabupaten"
@@ -461,6 +503,7 @@ const FormOrganisms = () => {
                     <option value="Kulon Progo">Kulon Progo</option>
                   </select>
 
+                  {/* Kecamatan */}
                   <select
                     type="text"
                     name="Kecamatan"
@@ -469,13 +512,20 @@ const FormOrganisms = () => {
                     className="w-full p-4 bg-[#FFFFFF50] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                     required
                   >
-                    <option value="">Kecamatan</option>
+                    <option value="">Pilih Kecamatan</option>
                     <option value="Samigaluh">Samigaluh</option>
                     <option value="Kalibawang">Kalibawang</option>
                     <option value="Girimulyo">Girimulyo</option>
-                    <option value="Nangulan">Nanggulan</option>
+                    <option value="Nanggulan">Nanggulan</option>
+                    <option value="Sentolo">Sentolo</option>
+                    <option value="Panjatan">Panjatan</option>
+                    <option value="Wates">Wates</option>
+                    <option value="Temon">Temon</option>
+                    <option value="Kokap">Kokap</option>
+                    <option value="Pengasih">Pengasih</option>
                   </select>
 
+                  {/* Kelurahan/Desa */}
                   <select
                     type="text"
                     name="Kelurahan"
@@ -484,13 +534,20 @@ const FormOrganisms = () => {
                     className="w-full p-4 bg-[#FFFFFF50] rounded-full focus:outline-none focus:ring-2 focus:ring-[#171717] text-[#17171795]"
                     required
                   >
-                    <option value="">Kelurahan/Desa</option>
-                    <option value="Kembang">Kembang</option>
-                    <option value="Jatisarono">Jatisarono</option>
-                    <option value="Wijimulyo">Wijimulyo</option>
-                    <option value="Tanjung">Tanjungharjo</option>
+                    <option value="">Pilih Kelurahan/Desa</option>
+                    <option value="Temon Kulon">Temon Kulon</option>
+                    <option value="Temon Wetan">Temon Wetan</option>
+                    <option value="Sindutan">Sindutan</option>
+                    <option value="Kaligintung">Kaligintung</option>
+                    <option value="Palihan">Palihan</option>
+                    <option value="Glagah">Glagah</option>
+                    <option value="Jangkaran">Jangkaran</option>
+                    <option value="Kebonrejo">Kebonrejo</option>
+                    <option value="Kalidengen">Kalidengen</option>
+                    <option value="Demangrejo">Demangrejo</option>
                   </select>
 
+                  {/* Dusun */}
                   <textarea
                     type="text"
                     name="Dusun"
@@ -501,6 +558,7 @@ const FormOrganisms = () => {
                     rows={3}
                     required
                   ></textarea>
+
                 </div>
               </div>
 

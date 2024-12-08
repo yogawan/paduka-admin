@@ -36,7 +36,7 @@ const TeamOrganisms = () => {
               </Link>
             </div>
 
-            <Link className="ml-6 mobile:mt-6" to={"/app"}>Our GitHub</Link>
+            <a className="ml-6 mobile:mt-6" href="https://github.com/yogawan/tugas-desain-front-end">Our GitHub</a>
           </div>
         </div>
       </div>
