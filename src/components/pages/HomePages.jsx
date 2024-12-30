@@ -1,12 +1,12 @@
 import React from "react";
 
-import NavigationMolecules from "../organisms/NavigationOrganisms";
+import DashboardTabOrganisms from "../organisms/DashboardTabOrganisms";
 import TeamOrganisms from "../organisms/TeamOrganisms";
 
 const HomePages = () => {
   return (
     <div>
-      <NavigationMolecules></NavigationMolecules>
+      <DashboardTabOrganisms></DashboardTabOrganisms>
       <TeamOrganisms></TeamOrganisms>
     </div>
   );

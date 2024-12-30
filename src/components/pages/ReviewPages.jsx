@@ -1,15 +1,14 @@
 import React from "react";
-
 import DashboardTabOrganisms from "../organisms/DashboardTabOrganisms";
-import FormOrganisms from "../organisms/FormOrganisms";
+import ReadAllUserData from "../organisms/UserData";
 
-const FormPages = () => {
+const ReviewPages = () => {
     return (
         <div>
             <DashboardTabOrganisms></DashboardTabOrganisms>
-            <FormOrganisms></FormOrganisms>
+            <ReadAllUserData></ReadAllUserData>
         </div>
     )
 }
 
-export default FormPages;
+export default ReviewPages;

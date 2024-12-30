@@ -1,4 +1,4 @@
-import { Groq } from 'groq-sdk';
+import { Groq } from 'groq-sdk/index.mjs';
 
 const GROQ_API = import.meta.env.VITE_GROQ;
 
